@@ -27,14 +27,18 @@ const Success = () => {
         </div>
       ) : !data ? (
         <div className="p-2 rounded-md bg-gray-100 text-gray-500 max-w-md mx-auto">
-          <p className="text-lg animate-pulse">Loading...</p>
+          <center>
+          <h2 className="text-lg animate-pulse">Loading...</h2>
+          </center>
         </div>
       ) : (
         <div className="py-4 px-8 rounded-md bg-gray-100 max-w-lg mx-auto">
+          <center>
           <h2 className="text-4xl font-semibold flex flex-col items-center space-x-1">
-            <span>Thanks for your order!</span>
+            Thanks for your order!
           </h2>
           <p className="text-lg mt-3">Check your inbox for the receipt.</p>
+          </center>
         </div>
       )}
     </div>
