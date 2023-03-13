@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import { fetcher, shootFireworks } from '@/lib/utils';
+import Link from 'next/link'
 
 const Success = () => {
   const {
