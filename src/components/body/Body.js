@@ -4,12 +4,10 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import { useState } from 'react';
 import getStripe from '@/lib/get-stripe';
-import getUserDetails from "@/pages/api/user/getUserDetails";
 
 export default function Body() {
     const { data: session } = useSession();
     const [redirecting, setRedirecting] = useState(false);
-    const response = getUserDetails(session.user.email);
 
     console.log(session);
 
@@ -38,16 +36,13 @@ export default function Body() {
         <div className={styles.customBody}>
             {session ? (
               // <Button variant="contained">Subscribe Now</Button>
-              <div>
-                <p>Your current credits ${response.data.credits}</p>
-                <Button
-                  variant="contained"
-                  onClick={redirectToCheckout}
-                  disabled={redirecting}
-                  className="border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"> 
-                  {redirecting ? 'Redirecting...' : 'Buy Credits'}
-                </Button>
-              </div>
+              <Button
+                variant="contained"
+                onClick={redirectToCheckout}
+                disabled={redirecting}
+                className="border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"> 
+                {redirecting ? 'Redirecting...' : 'Buy Credits'}
+              </Button>
             ) : (
                 <h3>Please login first to subscribe our plan!</h3>
             )}
