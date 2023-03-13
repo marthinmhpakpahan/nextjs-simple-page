@@ -9,7 +9,7 @@ import getUserDetails from "@/pages/api/user/getUserDetails";
 export default function Body() {
     const { data: session } = useSession();
     const [redirecting, setRedirecting] = useState(false);
-    const user = getUserDetails(session.user.email);
+    const response = getUserDetails(session.user.email);
 
     console.log(session);
 
@@ -39,7 +39,7 @@ export default function Body() {
             {session ? (
               // <Button variant="contained">Subscribe Now</Button>
               <div>
-                <p>Your current credits ${user.credits}</p>
+                <p>Your current credits ${response.data.credits}</p>
                 <Button
                   variant="contained"
                   onClick={redirectToCheckout}
