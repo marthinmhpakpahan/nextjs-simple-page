@@ -16,7 +16,7 @@ export default async (req, res) => {
 
   if (req.method === "POST") {
 
-    var user = await User.findOne({ id: userParam.user_id });
+    var user = await User.findOne({ email: userParam.email });
     var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 

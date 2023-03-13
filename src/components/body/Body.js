@@ -19,8 +19,7 @@ export default function Body() {
         items: [{
           price: "price_1MkW8BL2hWPyj1mdycoi916r",
           quantity: 1,
-          user_id: session.user.id,
-          testing: 'test parameters'
+          email: session.user.email
         }],
       });
   
