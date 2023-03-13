@@ -22,6 +22,7 @@ export default async function handler(req, res) {
                     credits: 10
                 }),
               });
+            console.log(updateUserResponse);
 
             res.status(200).json(session);
         } catch(err) {
