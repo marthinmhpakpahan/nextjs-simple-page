@@ -9,6 +9,8 @@ export default function Body() {
     const { data: session } = useSession();
     const [redirecting, setRedirecting] = useState(false);
 
+    console.log(session);
+
     const redirectToCheckout = async () => {
       // Create Stripe checkout
       const {
