@@ -17,11 +17,18 @@ export default async (req, res) => {
   if (req.method === "POST") {
 
     var user = await User.findOne({ id: userParam.id });
+    var currentdate = new Date(); 
+    var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
 
     if(!user) {
       user = new User(userParam);
       user.credits = 0;
-      user.modified_date = new Date().toLocaleDateString();
+      user.modified_date = datetime;
       user.save()
       response = {
         error: false,
@@ -29,7 +36,7 @@ export default async (req, res) => {
         data: user
       };
     } else {
-      user.modified_date = new Date().toLocaleDateString();
+      user.modified_date = datetime;
       user.save();
       response = {
         error: false,
