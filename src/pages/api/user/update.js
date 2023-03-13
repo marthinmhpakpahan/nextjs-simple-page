@@ -1,4 +1,4 @@
-import { getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import User from "../../../models/User";
 import dbConnect from "../../../helpers/dbConnect";
 
