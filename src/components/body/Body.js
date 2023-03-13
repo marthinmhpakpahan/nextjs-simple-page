@@ -3,6 +3,7 @@ import { Grid, Button, Item } from "@mui/material";
 import { useSession, signIn, signOut } from "next-auth/react";
 import axios from "axios";
 import { useState } from 'react';
+import getStripe from '@/lib/get-stripe';
 
 export default function Body() {
     const { data: session } = useSession();
