@@ -13,6 +13,7 @@ export default async function handler(req, res) {
                 success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
                 cancel_url: `${req.headers.origin}/`
             });
+            console.log(req.body);
             console.log(session);
 
             // IF SUCCESS, ADD BALANCE
