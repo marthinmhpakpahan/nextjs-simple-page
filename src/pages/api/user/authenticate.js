@@ -18,9 +18,9 @@ export default async (req, res) => {
 
     var user = await User.findOne({ id: userParam.id });
     var currentdate = new Date(); 
-    var datetime = "Last Sync: " + currentdate.getDate() + "/"
+    var datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
+                + currentdate.getFullYear() + " "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
