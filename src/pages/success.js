@@ -16,7 +16,6 @@ const Success = () => {
   useEffect(() => {
     if (data) {
       shootFireworks();
-      clearCart();
     }
   }, [data]);
 
