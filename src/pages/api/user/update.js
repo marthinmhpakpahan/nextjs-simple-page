@@ -1,4 +1,3 @@
-import { useSession } from "next-auth/react";
 import User from "../../../models/User";
 import dbConnect from "../../../helpers/dbConnect";
 
@@ -6,8 +5,6 @@ export default async (req, res) => {
   console.log("EXECUTING user update");
   const userParam = JSON.parse(req.body);
   console.log(userParam);
-  const { data: session } = useSession();
-  console.log(session);
   
   var response = {
     error: false,
@@ -19,7 +16,7 @@ export default async (req, res) => {
 
   if (req.method === "POST") {
 
-    var user = await User.findOne({ id: session.user.id });
+    var user = await User.findOne({ id: userParam.user_id });
     var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 

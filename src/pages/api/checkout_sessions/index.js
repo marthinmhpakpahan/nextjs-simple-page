@@ -19,6 +19,7 @@ export default async function handler(req, res) {
             const updateUserResponse = await fetch(`${process.env.NEXTAUTH_URL}/api/user/update`, {
                 method: "POST",
                 body: JSON.stringify({
+                    user_id: req.body.user_id,
                     credits: 10
                 }),
               });

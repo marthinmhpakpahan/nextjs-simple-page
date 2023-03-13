@@ -16,7 +16,8 @@ export default function Body() {
       } = await axios.post('/api/checkout_sessions', {
         items: [{
           price: "price_1MkW8BL2hWPyj1mdycoi916r",
-          quantity: 1
+          quantity: 1,
+          user_id: session.user.id
         }],
       });
   
