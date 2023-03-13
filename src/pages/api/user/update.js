@@ -3,9 +3,11 @@ import User from "../../../models/User";
 import dbConnect from "../../../helpers/dbConnect";
 
 export default async (req, res) => {
-  console.log("EXECUTING authenticate");
+  console.log("EXECUTING user update");
   const userParam = JSON.parse(req.body);
+  console.log(userParam);
   const { data: session } = useSession();
+  console.log(session);
   
   var response = {
     error: false,

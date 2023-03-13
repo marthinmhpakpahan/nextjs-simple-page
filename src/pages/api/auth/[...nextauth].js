@@ -11,9 +11,6 @@ export default NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
-      console.log("callback signIn");
-      console.log(user)
-      const isAllowedToSignIn = true
       const response = await fetch(`${process.env.NEXTAUTH_URL}/api/user/authenticate`, {
         method: "POST",
         body: JSON.stringify(user),
