@@ -18,9 +18,9 @@ export default function Body() {
       } = await axios.post('/api/checkout_sessions', {
         items: [{
           price: "price_1MkW8BL2hWPyj1mdycoi916r",
-          quantity: 1,
-          email: session.user.email
+          quantity: 1
         }],
+        email: session.user.email
       });
   
       // Redirect to checkout
