@@ -38,7 +38,7 @@ const Success = () => {
             Thanks for your order!
           </h2>
           <p className="text-lg mt-3">Check your inbox for the receipt.</p>
-          <p className="text-lg mt-3"><a href="/">Back to Homepage.</a></p>
+          <p className="text-lg mt-3"><Link href="/">Back to Homepage.</Link></p>
           </center>
         </div>
       )}
