@@ -19,7 +19,8 @@ export default function Body() {
         items: [{
           price: "price_1MkW8BL2hWPyj1mdycoi916r",
           quantity: 1,
-          user_id: session.user.id
+          user_id: session.user.id,
+          testing: 'test parameters'
         }],
       });
   
@@ -33,6 +34,7 @@ export default function Body() {
             {session ? (
               // <Button variant="contained">Subscribe Now</Button>
               <Button
+                variant="contained"
                 onClick={redirectToCheckout}
                 disabled={redirecting}
                 className="border rounded py-2 px-6 bg-rose-500 hover:bg-rose-600 border-rose-500 hover:border-rose-600 focus:ring-4 focus:ring-opacity-50 focus:ring-rose-500 text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-rose-500 max-w-max mt-4"> 
